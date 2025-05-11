@@ -153,9 +153,23 @@ a:hover {
     transition: transform 0.3s ease;
 }
 
-.galery img:hover {
+.gallery img:hover {
     transform: scale(1.1); /* Efekt zväčšenia pri hover */
 }
+
+/* CSS for the for-sale section */
+.for-sale img {
+    width: 150px; /* Nastavenie jednotnej šírky obrázkov */
+    height: 100px; /* Nastavenie jednotnej výšky obrázkov */ 
+    margin: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.for-sale img:hover {
+    transform: scale(1.1); /* Efekt zväčšenia pri hover */
+}
+
 
 /* Responzívne štýly */
 @media (max-width: 768px) {
