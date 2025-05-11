@@ -1,272 +1,247 @@
-<!DOCTYPE html>
-<html lang="sk">
-<head>
-    <meta charset="UTF-8">
-    <title>Chs Teddy Cavia - Chovatelská stanica morčat</title>
-    <link rel="stylesheet" href="web-pro-css.css">
-</head>
+/* Resetovanie základných štýlov */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<body>
-    <div id="wraper">
-    <div class="container">
-        <!-- Navigačný panel -->
-        <nav>
-            <ul>
-                <li><a href="#about" onclick="showSection('about')">O nás</a></li>
-                <li><a href="#for sale" onclick="showSection('for sale')">Na predaj</a></li>
-                <li><a href="#gallery" onclick="showSection('gallery')">Galéria</a></li>
-                <li><a href="#contact" onclick="showSection('contact')">Kontakt</a></li>
-            </ul>
-        </nav>
+/* Štýl tela stránky */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
-        <!-- Hlavička stránky -->
-        <header id="home">
-            <h1>Chs Teddy Cavia</h1>
-            <h2><em>Chovatelská stanica morčat</em></h2>
-            <h4><em>Chovateľská stanica ušľachtilých morčiat plemena US Teddy v pigmentových aj nepigmentových farbách.</em></h4>
-        </header>
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
 
-        <!-- Sekcia "O nás" -->
-        <section class="section" id="about">
-            <h2 style="text-align: center;">O nás</h2>
-            <p>Plemeno US Teddy je krátkosrsté plemeno morčaťa, ktoré je charakteristické svojou hustou, stojatou srsťou. Táto srsť sa im počas života viackrát obmieňa, a preto býva často veľký rozdiel vo vzhľade medzi mláďatkom po odstavení a dospelým morčaťom.<br><br></p>
-            <p>Cieľom našej chovateľskej stanice je zamerať sa na chov trojfarebných morčiat s červenými aj tmavými očami v pigmentových aj nepigmentovaných farbách.<br><br>    
-            Chov sa neustále snažíme posúvať dopredu, a práve preto sa niekedy musíme rozlúčiť aj s niektorým z obyvateľov našej chovnej skupiny.<br><br> Aj keď je pre nás každé takéto lúčenie veľmi náročné, vieme, že len takto môžeme zlepšovať kvalitu a úroveň našich odchovov.</p>
-        </section>
+.container {
+    flex: 1; /* This makes the main content take up available space */
+}
 
-        <!-- Sekcia na predaj -->
-        <section class="section" id="for sale">
-            <h2 style="text-align: center;">Na predaj</h2>
+/* Kontejner pre obsah */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-            <!-- Karty pre vrhy -->
-            <div class="tabs" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-                <div class="tab" data-tab="1" onclick="showTabContent(1)">Vrh W</div>
-                <div class="tab" data-tab="2" onclick="showTabContent(2)">Vrh X</div>
-                <div class="tab" data-tab="3" onclick="showTabContent(3)">Vrh Y</div>
-                <div class="tab" data-tab="4" onclick="showTabContent(4)">Vrh Z</div>
-                <div class="tab" data-tab="5" onclick="showTabContent(5)">Vrh A1</div> 
-                <div class="tab" data-tab="6" onclick="showTabContent(6)">Vrh B1</div>
-                <div class="tab" data-tab="7" onclick="showTabContent(7)">Vrh C1</div>
-                <div class="tab" data-tab="8" onclick="showTabContent(8)">Vrh D1</div>
-                <div class="tab" data-tab="9" onclick="showTabContent(9)">Vrh E1</div>
-                <div class="tab" data-tab="10" onclick="showTabContent(10)">Vrh F1</div>
-            </div>
+/* Navigačný panel (karierka) */
+nav {
+    background-color: #4a90e2;
+    padding: 10px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
 
-            <!-- Obsah pre vrh W -->
-            <div class="tab-content active-tab" id="tab-1">
-                <h3 style="text-align: center;">Vrh W</h3>
-                <p>Narodené 10.2.2024</p><p>Otec:</p><p>Matka: Paggy Chs Teddy Cavia</p>
-                <div class="gallery">
-                    <img src="morca1,1.JPG" alt="Morča vrh W 1">
-                    <img src="morca1.JPG" alt="Morča vrh W 2">
-                </div>
-            </div>
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
 
-            <!-- Obsah pre vrh X -->
-            <div class="tab-content" id="tab-2">
-                <h3 style="text-align: center;">Vrh X </h3>
-                <p> Narodené: 24.2.2024</p><p>Otec: Jackob Chs Teddy Cavia</p><p>Matka: Charity Rezekvítek</p>
-                <div class="gallery">
-                    <img src="morca10.jpg" alt="Morča vrh X 1">
-                    <img src="morca10,1.jpg" alt="Morča vrh X 2">
-                </div>
-            </div>
+nav ul li {
+    margin: 0 15px;
+}
 
-            <!-- Obsah pre vrh Y -->
-            <div class="tab-content" id="tab-3">
-                <h3 style="text-align: center;">Vrh Y</h3>
-                <p> Narodené: 25.3.2024</p><p>Otec: Silvester</p><p>Matka: Amanda Chs Teddy Cavia</p>
-                <div class="gallery">
-                    <img src="morca13.jpg" alt="Morča vrh Y 1">
-                    <img src="morca13,1.jpg" alt="Morča vrh Y 1">
-                    <img src="morca15.jpg" alt="Morča vrh Y 2">
-                    <img src="morca15,1.jpg" alt="Morča vrh Y 2">
-                    <img src="morca16.jpg" alt="Morča vrh Y 3">
-                    <img src="morca16,1.jpg" alt="Morča vrh Y 3">                    
-                </div>
-            </div>
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
 
-            <!-- Obsah pre vrh Z -->
-            <div class="tab-content" id="tab-4">
-                <h3 style="text-align: center;">Vrh Z</h3>
-                <p> Narodené: 28.4.2024</p><p>Otec: </p><p>Matka: </p>
-                <div class="gallery">
-                    <img src="morca17.jpg" alt="Morča vrh Z 1">
-                    <img src="morca17,1.jpg" alt="Morča vrh Z 2">
-                </div>
-            </div>
+nav ul li a:hover {
+    color: #ffb91b;
+}
 
-            <!-- Obsah pre vrh A1 -->
-            <div class="tab-content" id="tab-5">
-                <h3 style="text-align: center;">Vrh A1</h3>
-                <p> Narodené: 8.8.2024</p><p>Otec: </p><p>Matka: </p>
-                <div class="gallery">
-                    <img src="morca2,1.JPG" alt="Morča vrh A 1">
-                    <img src="morca2.jpg" alt="Morča vrh Z A">
-                    <img src="morca3,1.JPG" alt="Morča vrh A 1">
-                    <img src="morca3.jpg" alt="Morča vrh Z A">
-                </div>
-            </div>
+/* Hlavička */
+header {
+    text-align: center;
+    background-color: #4a90e2;
+    color: white;
+    padding: 60px 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+}
 
-            <!-- Obsah pre vrh B1 -->
-            <div class="tab-content " id="tab-6">
-                <h3 style="text-align: center;">Vrh B1</h3>
-                <p>Narodené: 10.12.2024</p><p>Otec:</p><p>Matka: Bag pipe Keira </p>
-                <div class="gallery">
-                    <img src="morca9,1.JPG" alt="Morča vrh B 1">
-                    <img src="morca9.JPG" alt="Morča vrh B 2">
-                </div>
-            </div>
+header h1 {
+    font-size: 3.5rem;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
 
-            <!-- Obsah pre vrh C1 -->
-            <div class="tab-content " id="tab-7">
-                <h3 style="text-align: center;">Vrh C1</h3>
-                <p>Narodené 11..2025</p><p>Otec:</p><p>Matka: </p>
-                <div class="gallery">
-                    <img src="morca18,1.JPG" alt="Morča vrh C 1">
-                    <img src="morca18.JPG" alt="Morča vrh C 2">
-                    <img src="morca19,1.JPG" alt="Morča vrh C 1">
-                    <img src="morca19.JPG" alt="Morča vrh C 2">
-                    <img src="morca20,1.JPG" alt="Morča vrh C 1">
-                    <img src="morca20.JPG" alt="Morča vrh C 2">
-                </div>
-            </div>
+header h2 {
+    font-size: 1.8rem;
+    font-style: italic;
+    margin-bottom: 10px;
+}
 
-            <!-- Obsah pre vrh D1 -->
-            <div class="tab-content " id="tab-8">
-                <h3 style="text-align: center;">Vrh D1</h3>
-                <p>Narodené 1.2.2025 </p><p>Otec:</p><p>Matka: </p>
-                <div class="gallery">
-                    <img src="morca22,1.jpg" alt="Morča vrh D 1">
-                    <img src="morca22.JPG" alt="Morča vrh D 2">
-                </div>
-            </div>
+header h4 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
 
-            <!-- Obsah pre vrh E1 -->
-            <div class="tab-content " id="tab-9">
-                <h3 style="text-align: center;">Vrh E1</h3>
-                <p>Narodené 10.2.2024 </p><p>Otec:</p><p>Matka: </p>
-                <div class="gallery">
-                    <img src="morca6,1.JPG" alt="Morča vrh E 1">
-                    <img src="morca6.JPG" alt="Morča vrh E 2">
-                    <img src="morca7,1.JPG" alt="Morča vrh E 1">
-                    <img src="morca7.JPG" alt="Morča vrh E 2">
-                    <img src="morca8,1.JPG" alt="Morča vrh E 1">
-                    <img src="morca8.JPG" alt="Morča vrh E 2">
-                </div>
-            </div>
+/* Karty pre vrhy */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
 
-            <!-- Obsah pre vrh F1 -->
-            <div class="tab-content " id="tab-10">
-                <h3 style="text-align: center;">Vrh F1</h3>
-                <p>Narodené 10.2.2024 </p><p>Otec:</p><p>Matka: </p>
-                <div class="gallery">
-                    <img src="morca4,1.JPG" alt="Morča vrh F 1">
-                    <img src="morca4.JPG" alt="Morča vrh F 2">
-                    <img src="morca5,1.JPG" alt="Morča vrh F 1">
-                    <img src="morca5.JPG" alt="Morča vrh F 2">
-                </div>
-            </div>
-        </section>
-           
+.tab {
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
 
-		
-        <!-- Sekcia "Galéria" -->
-        <section class="section" id="gallery">
-            <h2 style="text-align: center;"><b><i>Naša galéria obsahuje fotky našich morčiat, vrhov a ďalších šťastných momentov.</i></i></b></h2>
-            <div class="gallery">
-                <img src="g1.jpg" alt="Morča">
-                <img src="g2.jpg" alt="Morča">
-                <img src="g3.jpg" alt="Morča">
-                <img src="g4.jpg" alt="Morča">
-                <img src="g5.jpg" alt="Morča">
-                <img src="g6.jpg" alt="Morča">
+.tab:hover {
+    background-color: #ffb91b;
+}
 
-            </div>
-        </section>
+.tab.active-tab {
+    background-color: #ffb91b;
+}
 
-        <!-- Sekcia "Kontakt" -->
-        <section class="section" id="contact">
-            <p>Pre viac informácií alebo záujmu o morčatko nás neváhajte kontaktovať:</p>
-            <p>Adresa: <b>Gajary</b> bližšie info na:</p>
-            <p>E-mail: <b class="email">kopca.martinko@gmail.com</b></p>
-            <p class="phone">Tel. číslo: <b>903 931 395</b></p>
-            <a class="facebook-link" href="https://www.facebook.com/ChsTeddyCavia">Facebook</a>
-        </section>
-		 
-    <footer>
-        <p>&copy; 2025 Chs Teddy Cavia </p>
-    </footer>
+.tab-content {
+    display: none;
+    margin-top: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #0000001a;
+    min-height: 200px; /* Nastavenie jednotnej výšky */
+}
 
+.active-content {
+    display: block;
+}
 
-    <script>// Funkcia na zobrazenie sekcií
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                section.style.display = 'none';
-            });
-            const activeSection = document.getElementById(sectionId);
-            activeSection.style.display = 'block';
-        
-            // Uloženie aktuálnej sekcie do localStorage
-            localStorage.setItem('activeSection', sectionId);
-        }
-        
-        // Funkcia na zobrazenie obsahu tabov
-        function showTabContent(tabIndex) {
-            const tabs = document.querySelectorAll('.tab');
-            const contents = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => tab.classList.remove('active-tab'));
-            contents.forEach(content => content.classList.remove('active-content'));
-        
-            document.querySelector(`[data-tab="${tabIndex}"]`).classList.add('active-tab');
-            document.getElementById(`tab-${tabIndex}`).classList.add('active-content');
-        
-            // Uloženie aktuálneho tabu do localStorage
-            localStorage.setItem('activeTab', tabIndex);
-        }
-        
-        // Spustenie po načítaní stránky
-        document.addEventListener('DOMContentLoaded', function() {
-            // Načítanie predtým aktívnej sekcie z localStorage
-            const savedSection = localStorage.getItem('activeSection') || 'about';
-            showSection(savedSection);
-        
-            // Načítanie predtým aktívneho tabu z localStorage
-            const savedTab = parseInt(localStorage.getItem('activeTab')) || 1;
-            showTabContent(savedTab);
-        });
-        
-        // Add a click event listener to all images in the gallery to open them in fullscreen mode
-        const galleryImages = document.querySelectorAll('.gallery img');
-        galleryImages.forEach(image => {
-            image.addEventListener('click', () => {
-                const fullscreenDiv = document.createElement('div');
-                fullscreenDiv.style.position = 'fixed';
-                fullscreenDiv.style.top = '0';
-                fullscreenDiv.style.left = '0';
-                fullscreenDiv.style.width = '100%';
-                fullscreenDiv.style.height = '100%';
-                fullscreenDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-                fullscreenDiv.style.display = 'flex';
-                fullscreenDiv.style.justifyContent = 'center';
-                fullscreenDiv.style.alignItems = 'center';
-                fullscreenDiv.style.zIndex = '1000';
-        
-                const fullscreenImage = document.createElement('img');
-                fullscreenImage.src = image.src;
-                fullscreenImage.style.maxWidth = '90%';
-                fullscreenImage.style.maxHeight = '90%';
-                fullscreenImage.style.borderRadius = '10px';
-        
-                fullscreenDiv.appendChild(fullscreenImage);
-                document.body.appendChild(fullscreenDiv);
-        
-                fullscreenDiv.addEventListener('click', () => {
-                    document.body.removeChild(fullscreenDiv);
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+/* Odkazy */
+a {
+    color: #f1f1f1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffb91b;
+}
+
+/* Obrázky v galérii */
+.gallery img {
+    width: 150px; /* Nastavenie jednotnej šírky obrázkov */
+    height: 100px; /* Nastavenie jednotnej výšky obrázkov */ 
+    margin: 10px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.galery img:hover {
+    transform: scale(1.1); /* Efekt zväčšenia pri hover */
+}
+
+/* Responzívne štýly */
+@media (max-width: 768px) {
+    header {
+        padding: 40px 15px;
+    }
+
+    header h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tab {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header h2 {
+        font-size: 1.5rem;
+    }
+
+    header h4 {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .gallery img {
+        width: 100px;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tab {
+        margin-bottom: 5px;
+        padding: 8px 15px;
+    }
+
+    .tab-content {
+        padding: 10px;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #4a90e2;
+    color: white;
+    margin-top: 150px;
+    font-size: 1rem;
+    border-radius: 15px; /* Added border-radius for rounded corners */
+}
+
+.email {
+    color: black;
+}
+
+.phone {
+    color: black;
+}
+
+.facebook-link {
+    color: black;
+}
